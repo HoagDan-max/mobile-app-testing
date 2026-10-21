@@ -1,42 +1,29 @@
-Test Cases Tuần 5 - Chức năng Đăng nhập
+# Kịch bản Kiểm thử Đăng nhập (Tuần 5)
+**Ứng dụng:** SauceLabs Sample App (Swag Labs)
 
-TC01 - Đăng nhập thành công
+## Test Case 1: Đăng nhập thành công
+*   **Dữ liệu đầu vào:** Username = `standard_user`, Password = `secret_sauce`
+*   **Các bước thực hiện:**
+    1. Mở ứng dụng.
+    2. Nhập `standard_user` vào ô Username.
+    3. Nhập `secret_sauce` vào ô Password.
+    4. Bấm nút LOGIN.
+*   **Kết quả mong đợi:** Đăng nhập thành công, chuyển sang màn hình danh sách sản phẩm (có chữ "PRODUCTS").
 
-Bước thực hiện:
+## Test Case 2: Đăng nhập thất bại do sai mật khẩu
+*   **Dữ liệu đầu vào:** Username = `standard_user`, Password = `sai_mat_khau_roi`
+*   **Các bước thực hiện:**
+    1. Mở ứng dụng.
+    2. Nhập `standard_user` vào ô Username.
+    3. Nhập `sai_mat_khau_roi` vào ô Password.
+    4. Bấm nút LOGIN.
+*   **Kết quả mong đợi:** Vẫn ở màn hình đăng nhập, hệ thống hiển thị thông báo lỗi (chứa chữ "do not match").
 
-    1. Mở trang `https://the-internet.herokuapp.com/login`.
-
-    2. Nhập username `tomsmith`.
-
-    3. Nhập password `SuperSecretPassword!`.
-
-    4. Nhấn nút Login.
-
-Kết quả mong đợi: Hiển thị thông báo `You logged into a secure area!`.
-
-TC02 - Đăng nhập sai mật khẩu
-
-Bước thực hiện:
-
-    1. Mở trang `https://the-internet.herokuapp.com/login`.
-
-    2. Nhập username `tomsmith`.
-
-    3. Nhập password `WrongPass`.
-
-    4. Nhấn nút Login.
-
-Kết quả mong đợi: Hiển thị thông báo `Your password is invalid!`.
-
-TC03 - Để trống thông tin đăng nhập
-
-Bước thực hiện:
-
-    1. Mở trang `https://the-internet.herokuapp.com/login`.
-
-    2. Để trống username và password.
-
-    3. Nhấn nút Login.
-
-Kết quả mong đợi: Hiển thị thông báo `Your username is invalid!`.
-
+## Test Case 3: Đăng nhập thất bại do tài khoản bị khóa
+*   **Dữ liệu đầu vào:** Username = `locked_out_user`, Password = `secret_sauce`
+*   **Các bước thực hiện:**
+    1. Mở ứng dụng.
+    2. Nhập `locked_out_user` vào ô Username.
+    3. Nhập `secret_sauce` vào ô Password.
+    4. Bấm nút LOGIN.
+*   **Kết quả mong đợi:** Vẫn ở màn hình đăng nhập, hệ thống hiển thị thông báo lỗi (chứa chữ "locked out").

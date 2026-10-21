@@ -1,6 +1,15 @@
-```gitignore
+```text
+# Bỏ qua thư mục môi trường ảo
 venv/
 .venv/
+env/
+
+# Bỏ qua file rác của Python và Cache
 __pycache__/
+*.pyc
 .pytest_cache/
-```
+
+# Bỏ qua file ứng dụng (Quan trọng: Không đẩy APK lên Github)
+*.apk
+*.ipa
+*.zip
